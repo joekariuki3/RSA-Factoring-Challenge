@@ -3,19 +3,17 @@
 void factor(long long int num)
 {
 	char pair[256];
-	int i = 2, j = 2;
-
-	for (i = 2; i <= num; i++)
+	int i = 2;
+	
+	for (i = 2; i <= num/2; i++)
 	{
-		for (j = 2; j <= num; j++)
+		if (num % i == 0)
 		{
-			if (i * j == num)
-			{
-				printf("%lld=%d*%d\n", num, i, j);
-			}
-			break;
+			printf("%lld=%d*%lld\n", num, i, num/i);
+			return;
 		}
 	}
+	
 }
 /**
  * main - start of main function
