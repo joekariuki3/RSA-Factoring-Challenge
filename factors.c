@@ -25,8 +25,6 @@ int main(int argc, char **argv)
 {
 	FILE *data;
 	long long int num;
-	size_t bufsize = 0;
-	char *line = NULL, *strNum = NULL;
 
 	if (argc < 2 || argc > 2)
 	{
@@ -41,13 +39,10 @@ int main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 
-	while (getline(&line, &bufsize, data) != -1)
+	while (fscanf(data, "%lld\n",&num) != EOF)
 	{
-		strNum = strtok(line, " \t\n");
-		num = strtoll(strNum, NULL, 10);
 		factor(num);
 	}
-	free(line);
 	fclose(data);
 	return (0);
 }
