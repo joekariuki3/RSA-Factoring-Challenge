@@ -9,7 +9,7 @@ void factor(long long int num)
 	{
 		if (num % i == 0)
 		{
-			printf("%lld=%d*%lld\n", num, i, num/i);
+			printf("%lld=%lld*%d\n", num, num/i, i);
 			return;
 		}
 	}
